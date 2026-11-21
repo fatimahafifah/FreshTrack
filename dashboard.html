@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | FreshTrack</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+
+        <div class="container-fluid px-4">
+
+            <a class="navbar-brand" href="dashboard.html">
+                FreshTrack
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="dashboard.html">Dashboard</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="inventory.html">Food Inventory</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="expiry.html">Expiry Tracker</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="reports.html">Reports</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings.html">Settings</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="#" id="logoutBtn">Logout</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- DASHBOARD CONTENT -->
+    <main class="main-container">
+
+        <div class="mb-4">
+
+            <h2 class="page-title">
+                Dashboard
+            </h2>
+
+            <p class="text-muted">
+                Welcome back, <span id="userName">User</span>!
+                Here's your food inventory overview.
+            </p>
+
+        </div>
+
+
+        <!-- SUMMARY CARDS -->
+        <div class="row g-3 mb-4">
+
+            <div class="col-6 col-lg-3">
+
+                <div class="card summary-card h-100">
+                    <div class="card-body">
+
+                        <p class="text-muted">Total Food Items</p>
+
+                        <h2 id="totalCount">0</h2>
+
+                        <small>All recorded food items</small>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <div class="card summary-card h-100">
+                    <div class="card-body">
+
+                        <p class="text-muted">Fresh Items</p>
+
+                        <h2 class="text-success" id="freshCount">0</h2>
+
+                        <small>Still safe to use</small>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <div class="card summary-card h-100">
+                    <div class="card-body">
+
+                        <p class="text-muted">Expiring Soon</p>
+
+                        <h2 class="text-warning" id="soonCount">0</h2>
+
+                        <small>Within 3 days</small>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <div class="card summary-card h-100">
+                    <div class="card-body">
+
+                        <p class="text-muted">Expired Items</p>
+
+                        <h2 class="text-danger" id="expiredCount">0</h2>
+
+                        <small>Past expiry date</small>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHART AND EXPIRY ALERTS -->
+        <div class="row g-4 mb-4">
+
+            <div class="col-lg-8">
+
+                <div class="card h-100">
+
+                    <div class="card-body">
+
+                        <h5 class="mb-3">
+                            Food Expiry Overview
+                        </h5>
+
+                        <div class="chart-container">
+                            <canvas id="expiryChart"></canvas>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body">
+
+                        <h5 class="mb-3">
+                            Expiry Alerts
+                        </h5>
+
+                       <div id="expiryAlerts">
+
+                            <p class="text-muted">
+                                No expiry alerts at the moment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECENT FOOD ITEMS -->
+        <div class="card mb-4">
+
+            <div class="card-body">
+
+                <h5 class="mb-3">
+                    Recent Food Items
+                </h5>
+
+                <div class="table-responsive">
+
+                    <table class="table align-middle">
+
+                        <thead>
+                            <tr>
+                                <th>Food Name</th>
+                                <th>Category</th>
+                                <th>Expiry Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recentFoodTable">
+
+                            <tr>
+                                <td colspan="4" class="text-center text-muted">
+                                    No food items found.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>© 2026 FreshTrack. All Rights Reserved.</p>
+            <p>Track your food. Reduce your waste. Save your money.</p>
+        </footer>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>
