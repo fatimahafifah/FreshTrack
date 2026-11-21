@@ -14,85 +14,125 @@
 
 <body class="login-page">
 
-    <div class="container">
-        <div class="row justify-content-center align-items-center min-vh-100">
+    <div class="login-wrapper">
 
-            <div class="col-md-6 col-lg-5">
+        <!-- LEFT SIDE -->
+        <div class="login-visual">
 
-                <div class="login-card">
+            <div class="visual-content">
 
-                    <div class="text-center mb-4">
+                <h2 class="brand-name">FreshTrack.</h2>
 
-                        <h2 class="brand-name">FreshTrack</h2>
+                <div class="visual-message">
+                    <p class="visual-label">SMART FOOD MANAGEMENT</p>
 
-                        <p class="text-muted">
-                            Track your food. Reduce your waste.
-                        </p>
+                    <h1>
+                        Fresh food.<br>
+                        Less waste.<br>
+                        Better living.
+                    </h1>
 
+                    <p class="visual-description">
+                        Take control of your kitchen.
+                        Keep track of your food and make
+                        every ingredient count.
+                    </p>
+
+                    <div class="visual-features">
+                        <span>Track Expiry</span>
+                        <span>Manage Food</span>
+                        <span>Reduce Waste</span>
                     </div>
-
-                    <h3 class="text-center mb-2">
-                        Welcome Back!
-                    </h3>
-
-                    <p class="text-center text-muted mb-4">
-                        Please login to your account.
-                    </p>
-
-                    <form id="loginForm">
-
-                        <div class="mb-3">
-                            <label class="form-label">
-                                Email Address
-                            </label>
-
-                            <input
-                                type="email"
-                                id="loginEmail"
-                                class="form-control"
-                                placeholder="Enter your email"
-                                required
-                            >
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">
-                                Password
-                            </label>
-
-                            <input
-                                type="password"
-                                id="loginPassword"
-                                class="form-control"
-                                placeholder="Enter your password"
-                                required
-                            >
-                        </div>
-
-                        <div id="loginMessage" class="mb-3"></div>
-
-                        <button type="submit" class="btn btn-primary w-100">
-                            Login
-                        </button>
-
-                    </form>
-
-                    <p class="text-center mt-4 mb-0">
-                        Don't have an account?
-
-                        <a href="register.html">
-                            Register here
-                        </a>
-                    </p>
-
                 </div>
+
+                <p class="visual-footer">
+                    Track your food. Reduce your waste.
+                </p>
 
             </div>
 
         </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="login-form-section">
+
+            <div class="login-card">
+
+                <div class="login-heading">
+
+                    <p class="login-label">WELCOME BACK</p>
+
+                    <h2>Welcome Back!</h2>
+
+                    <p>
+                        Please login to your account
+                        to continue.
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+                    <div class="mb-4">
+
+                        <label class="form-label">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            class="form-control"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            class="form-control"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div id="loginMessage" class="mb-3"></div>
+
+
+                    <button type="submit" class="btn btn-primary w-100">
+                        Login to Account
+                    </button>
+
+                </form>
+
+
+                <p class="register-text">
+                    Don't have an account?
+                    <a href="register.html">Register here</a>
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
+
     <script src="js/auth.js"></script>
+
     <script>
         console.log("FreshTrack Auth Loaded!");
     </script>
